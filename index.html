@@ -6,7 +6,26 @@
   <!-- Prevent showing CAPTCHA -->
   <input type="hidden" name="_captcha" value="false">
 
-  <!-- Optional: Redirect to thank-you page after submission --><script>
+  <!-- Optional: Redirect to thank-you page after<script>
+  function sendToWhatsApp() {
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const details = document.getElementById("details").value;
+
+    const message = *New Ride Booking*%0AName: ${name}%0APhone: ${phone}%0ADetails: ${details};
+    const url = https://wa.me/918556888146?text=${message};
+
+    window.open(url, "_blank");
+  }
+</script>
+
+<h2>Book Your Ride</h2>
+<form onsubmit="sendToWhatsApp(); return false;">
+  <input type="text" id="name" placeholder="Your Name" required><br><br>
+  <input type="tel" id="phone" placeholder="Phone Number" required><br><br>
+  <textarea id="details" placeholder="Pickup location, time, destination" required></textarea><br><br>
+  <button type="submit">Book Now on WhatsApp</button>
+</form> submission --><script>
   function sendToWhatsApp() {
     const name = document.getElementById("name").value;
     const phone = document.getElementById("phone").value;
